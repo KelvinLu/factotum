@@ -71,7 +71,10 @@ Ideas to consider:
   - Consider labelling the largest-depth of a node w.r.t. the root with a DFS traversal (or Floyd–Warshall when needing many roots at a time?). This can be reduced to a optimal-path problem with all edge weights of one.
   - Consider using each BFS/DFS to also label the smallest-height/longest-height from the leaves of the DAG.
   - Prefer using "shortest-depth"/"longest-depth" over breadth and depth, since the DAG is not a tree.
-  - ... just use a simple topological sort and cop-out... ?
+  - ... or just use a simple topological sort with some deterministic resolution and cop-out... ?
+- Order of execution for `Actor`s probably means a lot.
+  - Not supported at the moment and listed as a non-goal... should change though.
+  - Curently assumes that all `Actor`s act and behave independently.
 ```
 
 ---
