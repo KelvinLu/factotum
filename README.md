@@ -88,8 +88,7 @@ Ideas to consider:
   - Merging of configuration values should have arbitrary semantics.
   - A developer should define how certain sets of configuration are understood together.
   - Values that add up (such as quantities) should be able to add! Values that concatenate (like lists of favorite foods) should be able to concatenate! Values that are replaced with one another should have a selection mechanism! Values that coalesce by an arbitrary process should do just that!
-  - Values that are coalesced based on the  graph traversal should have  
-  - The provisioning implementation should decide these semantics, based on its configuration needs.
+  - The provisioning implementation should decide these semantics, based on its configuration needs. Information loss about the configuration should only occur at the `Actor` level.
 - Provisioning implementations should be explicitly provided certain pieces of information.
   - Avoids ambiguity and removes the abstraction of information transfer.
 - Require type-checking when implementations request certain configuration values
@@ -115,3 +114,4 @@ Ideas to consider:
 - A notion of a dependency graph for the collection of `Actor`s to be run.
   - Would also be nice to have.
   - Then perhaps actors must require some sensible defaults.
+  - Probably will need to be a core goal to support an order-of-operations for `Actor`s.
