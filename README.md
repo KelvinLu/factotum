@@ -95,6 +95,8 @@ Ideas to consider:
       - Use `load` to evaluate the provided class in a throwaway anonymous Module, which limits public access to internals.
     - Provide methods that yield to a block of statements... less DSL-like.
       - Instance approach: Let the `Clazz.new` initializer take a block of statements and evaluate it at the instance level, through defined instance methods. Store data as instance variables.
+    - Ultimate cool-factor method: just `instance_eval/3` `foo_bar.rb` as a string in the context of an instance of an entity `Clazz`.
+      - Define instance methods to provide DSL.
 - If entities are declaratively stated in `class`es, how do we define helpers?
   - Use a `module` to hold helper code.
   - Have a directory for such things and follow a similar convention to naming `Clazz` entities.
