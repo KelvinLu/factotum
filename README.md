@@ -79,6 +79,29 @@ Ideas to consider:
 
 ---
 
+## Implementation
+### Specifics about the proposed DSL
+
+```
+TODO(kelvinlu): write this section
+
+Ideas to consider:
+- Try to provide a declarative DSL. 
+- How to create an entity of `Clazz`?
+  - Let there be one `clazz.rb` script.
+    - Do something like Homebrew Formulas; translate a snakecase filename `foo_bar.rb` and assume a class or module named `FooBar`. 
+      - Class approach: Use class methods defined in a `Clazz` superclass. Use `inherited` hook to monkey-patch via `instance_eval`s.
+      - Module approach: Create a `Clazz` mix-in Module and define `included`/`prepended` hooks to monkey-patch via `instance_eval`s.
+      - Use `load` to evaluate the provided class in a throwaway anonymous Module, which limits public access to internals.
+    - Provide methods that yield to a block of statements... less DSL-like.
+      - Instance approach: Let the `Clazz.new` initializer take a block of statements and evaluate it at the instance level, through defined instance methods. Store data as instance variables.
+- If entities are declaratively stated in `class`es, how do we define helpers?
+  - Use a `module` to hold helper code.
+  - Have a directory for such things and follow a similar convention to naming `Clazz` entities.
+```
+
+---
+
 ## Purposeful Goals
 ### The ideals that this project should provide as unique values.
 
